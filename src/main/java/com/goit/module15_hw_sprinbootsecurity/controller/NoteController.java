@@ -3,14 +3,14 @@ package com.goit.module15_hw_sprinbootsecurity.controller;
 import com.goit.module15_hw_sprinbootsecurity.dto.NoteDto;
 import com.goit.module15_hw_sprinbootsecurity.entity.Note;
 import com.goit.module15_hw_sprinbootsecurity.service.NoteService;
-import jakarta.servlet.ServletRequest;
-import jakarta.websocket.server.PathParam;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RequestMapping("/note")
 @Controller
@@ -41,21 +41,21 @@ public class NoteController {
     @Secured({"SUPER_ADMIN"})
     @GetMapping("/list")
     public String showAllNotes(Model model) {
-        model.addAttribute("notes",noteService.listAll());
+        model.addAttribute("notes", noteService.listAll());
         return "index";
     }
 
     @Secured({"USER", "ADMIN", "SUPER_ADMIN"})
     @GetMapping("/list-ro")
     public String showAllNotesRO(Model model) {
-        model.addAttribute("notes",noteService.listAll());
+        model.addAttribute("notes", noteService.listAll());
         return "index_user";
     }
 
     @Secured({"ADMIN", "SUPER_ADMIN"})
     @GetMapping("/list-rw")
     public String showAllNotesRW(Model model) {
-        model.addAttribute("notes",noteService.listAll());
+        model.addAttribute("notes", noteService.listAll());
         return "index_rw";
     }
 

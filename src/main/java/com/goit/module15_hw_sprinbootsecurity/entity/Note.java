@@ -1,6 +1,12 @@
 package com.goit.module15_hw_sprinbootsecurity.entity;
 
 import jakarta.persistence.*;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.Table;
+//import jakarta.persistence.Id;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
+//import jakarta.persistence.Column;
 import org.springframework.stereotype.Component;
 
 
@@ -12,13 +18,13 @@ public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
 
     @Column(name = "title")
-    String title;
+    private String title;
 
     @Column(name = "content")
-    String content;
+    private String content;
 
     public Note() {
     }
@@ -52,7 +58,4 @@ public class Note {
         this.content = content;
     }
 
-    public String toString() {
-        return "Note(id=" + this.getId() + ", title=" + this.getTitle() + ", content=" + this.getContent() + ")";
-    }
 }

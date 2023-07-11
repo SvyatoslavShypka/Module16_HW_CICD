@@ -18,7 +18,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 import java.util.Properties;
 
-import static com.goit.module15_hw_sprinbootsecurity.util.Constants.*;
+import static com.goit.module15_hw_sprinbootsecurity.util.Constants.LOG_LEVEL;
+import static com.goit.module15_hw_sprinbootsecurity.util.Constants.LOG_PATTERN;
+import static com.goit.module15_hw_sprinbootsecurity.util.Constants.LOG_ENCODING;
+import static com.goit.module15_hw_sprinbootsecurity.util.Constants.LOG_FILE;
+import static com.goit.module15_hw_sprinbootsecurity.util.Constants.LOG_FILE_NAME_PATTERN;
+import static com.goit.module15_hw_sprinbootsecurity.util.Constants.DEFAULT_APP_FILE_NAME;
+
 
 public class LoggerConfiguration {
 

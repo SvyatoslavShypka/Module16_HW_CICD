@@ -10,7 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -33,7 +35,8 @@ public class NoteService {
 
     public NoteDto add(Note note) {
         Random random = new Random();
-        note.setId(random.nextLong(1000000));
+        final long randomValue = 1000000L;
+        note.setId(random.nextLong(randomValue));
         noteRepository.save(note);
         return noteMapper.mapEntityToDto(note);
     }

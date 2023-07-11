@@ -37,7 +37,6 @@ public class WebSecurityConfiguration {
                                     .requestMatchers(HttpMethod.GET, "/list", "/actuator/**").permitAll()
                                     .anyRequest()
                                     .authenticated();
-//                                    .permitAll();
                         }
                 )
 

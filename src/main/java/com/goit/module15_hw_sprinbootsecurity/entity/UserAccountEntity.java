@@ -1,13 +1,20 @@
 package com.goit.module15_hw_sprinbootsecurity.entity;
 
 import com.goit.module15_hw_sprinbootsecurity.entity.converter.AuthorityConverter;
-import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.Hibernate;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.List;
-import java.util.Objects;
 
 @Getter
 @Setter
@@ -63,16 +70,4 @@ public class UserAccountEntity {
         return authorities;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        UserAccountEntity that = (UserAccountEntity) o;
-        return getId() != null && Objects.equals(getId(), that.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }
