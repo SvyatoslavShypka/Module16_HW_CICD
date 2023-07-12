@@ -6,10 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
-import org.springframework.stereotype.Component;
 
 @Entity
-//@Component
 @Table(name = "notes")
 public class Note {
 
