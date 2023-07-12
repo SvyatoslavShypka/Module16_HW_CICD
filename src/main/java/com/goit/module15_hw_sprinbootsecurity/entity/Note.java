@@ -9,7 +9,7 @@ import jakarta.persistence.Column;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Component
+//@Component
 @Table(name = "notes")
 public class Note {
 
