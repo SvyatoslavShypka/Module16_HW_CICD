@@ -19,6 +19,7 @@ import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 @EnableMethodSecurity(securedEnabled = true)
 public class WebSecurityConfiguration {
 
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         HttpSessionRequestCache requestCache = new HttpSessionRequestCache();
